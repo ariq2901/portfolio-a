@@ -1,0 +1,67 @@
+.ariq {
+  font-size: 100px;
+}
+
+.container {
+  width: 100%;
+  padding: 40px 42px;
+}
+
+/*^ Navbar */
+.active {
+  color: #272727;
+  text-decoration: none;
+}
+
+.navLine {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navProfile {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+}
+
+.nameLogo {
+  margin-left: 10px;
+}
+
+.firstName {
+  font-family: 'Poppins Semibold';
+}
+
+.nextName {
+  margin-left: 5px;
+  font-family: 'Poppins Regular';
+}
+
+.navLink {
+  color: #949494;
+  width: 40%;
+  justify-content: space-around;
+  list-style: none;
+  display: flex;
+  font-family: 'Poppins Regular';
+  font-size: 14px;
+}
+
+.linkDrop {
+  display: flex;
+  align-items: baseline;
+}
+
+.linkDrop__icon {
+  margin-left: 5px;
+  font-size: 10px;
+  color: #949494;
+}
+
+.box {
+  width: 100%;
+  height: 60vh;
+  background: #08e988;
+}
