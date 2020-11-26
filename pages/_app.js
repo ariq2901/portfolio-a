@@ -10,11 +10,14 @@ function MyApp({ Component, pageProps, router }) {
   const pageAnim = {
     pageInitial: {
       x: -100,
+      opacity: 0
     },
     pageAnimate: {
       x: 0,
-      transitions: {
-        delay: .4
+      opacity: 1,
+      transition: {
+        delay: .1,
+        duration: .5
       }
     }
   }

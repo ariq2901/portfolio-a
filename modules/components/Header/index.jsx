@@ -65,7 +65,9 @@ const Header = () => {
                 <Link href="/">About Me</Link>
                 <i className={`fas fa-chevron-down ${styles.linkDrop__icon}`}></i>
               </motion.li>
-              <motion.li whileHover={navLink}>Resume</motion.li>
+              <motion.li whileHover={navLink} className={router.pathname == "/resume" ? `${styles.active} ${styles.linkDrop}` : `${styles.linkDrop}`}>
+                <Link href="/resume">Resume</Link>
+              </motion.li>
               <motion.li whileHover={navLink}>Potfolio</motion.li>
               <motion.li whileHover={navLink}>Blog</motion.li>
               <motion.li whileHover={navLink}>Contact</motion.li>
