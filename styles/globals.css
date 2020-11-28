@@ -2,13 +2,13 @@
   --base-font: #333333;
   --long-font: #666666;
   --primary-color: #54ca95;
+  --secondary-color: #6a5acd;
 }
 
 html,
 body {
   padding: 0;
   margin: 0;
-  height: 10000px;
 }
 
 a {
