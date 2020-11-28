@@ -5,6 +5,9 @@ import '@fortawesome/fontawesome-free/js/solid';
 import '@fortawesome/fontawesome-free/js/regular';
 import '@fortawesome/fontawesome-free/js/brands';
 import '@fortawesome/fontawesome-free/css/all.css';
+import { useEffect } from "react";
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 function MyApp({ Component, pageProps, router }) {
   const pageAnim = {
@@ -21,6 +24,10 @@ function MyApp({ Component, pageProps, router }) {
       }
     }
   }
+
+  useEffect(() => {
+    Aos.init({ duration: 1500 });
+  }, []);
 
   return (
     <motion.div key={router.route} initial="pageInitial" animate="pageAnimate" variants={pageAnim}>

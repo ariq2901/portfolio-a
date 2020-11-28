@@ -61,11 +61,11 @@ const Header = () => {
               </div>
             </motion.div>
             <motion.ul className={styles.navLink} initial="hidden" animate="visible" variants={navbar}>
-              <motion.li whileHover={navLink} className={router.pathname == "/" ? `${styles.active} ${styles.linkDrop}` : `${styles.linkDrop}`}>
+              <motion.li className={router.pathname == "/" ? `${styles.active} ${styles.a} ${styles.linkDrop}` : `${styles.a} ${styles.linkDrop}`}>
                 <Link href="/">About Me</Link>
                 <i className={`fas fa-chevron-down ${styles.linkDrop__icon}`}></i>
               </motion.li>
-              <motion.li whileHover={navLink} className={router.pathname == "/resume" ? `${styles.active} ${styles.linkDrop}` : `${styles.linkDrop}`}>
+              <motion.li className={router.pathname == "/resume" ? `${styles.active} ${styles.a} ${styles.linkDrop}` : `${styles.a} ${styles.linkDrop}`}>
                 <Link href="/resume">Resume</Link>
               </motion.li>
               <motion.li whileHover={navLink}>Potfolio</motion.li>

@@ -6,9 +6,16 @@ export const ProgressScroll = ({ constraintRe }) => {
   const { scrollYProgress } = useViewportScroll();
   const scale = useTransform(scrollYProgress, [0, 1], [0.2, 2]);
 
+  const hovInteract = {
+    scale: 1.2,
+    transition: {
+      duration: .1
+    }
+  };
+
   return (
     <Fragment>
-      <motion.div drag dragConstraints={constraintRe} className="containerBar">
+      <motion.div drag dragConstraints={constraintRe} whileHover={hovInteract} className="containerBar">
         <motion.div
           className="statusBar"
           style={{scaleY: scrollYProgress}}

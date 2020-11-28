@@ -13,6 +13,45 @@
   text-decoration: none;
 }
 
+.a {
+  position: relative;
+}
+
+.a::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  transition: width 0s ease, background .35s ease;
+}
+
+.a::after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-image: linear-gradient(to right, #38ef7d, #74ebd5);
+  transition: width .35s ease;
+}
+
+.a:hover::before {
+  width: 100%;
+  background-image: linear-gradient(to right, #38ef7d, #74ebd5);
+  transition: width .35s ease,
+}
+
+.a:hover::after {
+  width: 100%;
+  background: transparent;
+  transition: all 0s ease;
+}
+
 .navLine {
   width: 100%;
   display: flex;
@@ -377,4 +416,131 @@
 
 .timelineIcon {
   color: #ffffff;
+}
+
+/*^ Skills */
+.gradientBg {
+  margin-top: 12vh;
+  height: 100vh;
+  background: linear-gradient(240deg, #b244fd, #008cff, #00ffc9, #06f787);
+  background-size: 600% 600%;
+
+  /* -webkit-animation: liveGradient 44s ease infinite;
+  -moz-animation: liveGradient 44s ease infinite;
+  animation: liveGradient 44s ease infinite; */
+}
+
+@-webkit-keyframes liveGradient {
+  0%{background-position:0% 73%}
+  50%{background-position:100% 28%}
+  100%{background-position:0% 73%}
+}
+@-moz-keyframes liveGradient {
+  0%{background-position:0% 73%}
+  50%{background-position:100% 28%}
+  100%{background-position:0% 73%}
+}
+@keyframes liveGradient {
+  0%{background-position:0% 73%}
+  50%{background-position:100% 28%}
+  100%{background-position:0% 73%}
+}
+
+.baris {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+}
+
+.skillChoice {
+  width: 100%;
+  position: relative;
+  height: 100%;
+}
+
+.collectionBox {
+  padding: 10px 15px;
+  margin-left: 16px;
+  width: 70%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 230px;
+  box-sizing: border-box;
+  place-items: center;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+}
+
+.choice {
+  position: absolute;
+  width: 70%;
+  height: 69px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  margin-top: 15px;
+  margin-left: 17px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.234);
+  box-shadow: 0 7px 31px rgba(0,0,0,0.06);
+}
+
+.choiceIcon {
+  position: relative;
+  width: 20%;
+}
+
+.choiceIco {
+  cursor: pointer;
+  width: 100%;
+  filter: invert(22%) sepia(6%) saturate(185%) hue-rotate(97deg) brightness(91%) contrast(96%);
+}
+
+.choiceIcon:nth-child(2) {
+  width: 25%;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: -180%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  left: -70%;
+  right: 0;
+  width: 80px;
+  height: 40px;
+  border-radius: 10px;
+  font-family: 'Poppins Regular';
+  font-size: 12px;
+  color: rgba(253, 253, 253, 0.823);
+  background-color: rgba(73, 73, 73, 0.576);
+}
+
+.choiceIco:hover ~ .tooltip {
+  display: flex;
+  transition: all 1s;
+}
+
+.tooltipDua {
+  bottom: -140%;
+}
+
+.logoWrapper {
+  width: 50%;
+  overflow: hidden;
+  position: relative;
+  right: -300%;
+  opacity: 0;
+}
+
+.visibleLogoWrapper {
+  right: 0;
+  opacity: 1;
+  transition: right .6s ease, opacity 1s ease;
+}
+
+.langIcon {
+  width: 100%;
 }
