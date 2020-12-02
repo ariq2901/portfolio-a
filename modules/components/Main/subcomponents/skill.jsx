@@ -2,7 +2,7 @@ import { Fragment, useEffect, useState, useRef } from "react";
 import PropTypes from 'prop-types';
 import styles from '@styles/main.module.css';
 
-import { motion } from "framer-motion";
+import { AnimateSharedLayout, motion } from "framer-motion";
 
 export const Skill = () => {
 
@@ -21,37 +21,43 @@ export const Skill = () => {
       "id" : 1,
       "name" : "Javascript",
       "image" : "/icons/js.png",
-      "skill" : 95
+      "skill" : 95,
+      "color" : "#fdfd0a"
     },
     {
       "id" : 2,
       "name" : "CSS",
       "image" : "/icons/css.png",
-      "skill" : 96
+      "skill" : 96,
+      "color" : "#0e7eff"
     },
     {
       "id" : 3,
       "name" : "Dart",
       "image" : "/icons/dart.png",
-      "skill" : 85
+      "skill" : 85,
+      "color" : "#0048ef"
     },
     {
       "id" : 4,
       "name" : "HTML",
       "image" : "/icons/html.png",
-      "skill" : 90
+      "skill" : 98,
+      "color" : "#ff740d"
     },
     {
       "id" : 5,
       "name" : "PHP",
       "image" : "/icons/php.png",
-      "skill" : 94
+      "skill" : 94,
+      "color" : "#a12dff"
     },
     {
       "id" : 6,
       "name" : "Java",
       "image" : "/icons/java.webp",
-      "skill" : 80
+      "skill" : 80,
+      "color" : "#ffffff"
     },
   ];
 
@@ -60,25 +66,29 @@ export const Skill = () => {
       "id" : 7,
       "name" : "Bootstrap",
       "image" : "/icons/bootstrap.png",
-      "skill" : 98
+      "skill" : 98,
+      "color" : "#7200ce"
     },
     {
       "id" : 8,
       "name" : "Laravel",
       "image" : "/icons/laravel.png",
-      "skill" : 97
+      "skill" : 97,
+      "color" : "#ff0707"
     },
     {
       "id" : 9,
       "name" : "React",
       "image" : "/icons/react.png",
-      "skill" : 95
+      "skill" : 95,
+      "color" : "#07dbff"
     },
     {
       "id" : 10,
       "name" : "Codeigniter",
       "image" : "/icons/codeigniter.png",
-      "skill" : 90
+      "skill" : 90,
+      "color" : "#ff7b07"
     },
   ];
 
@@ -87,13 +97,15 @@ export const Skill = () => {
       "id" : 11,
       "name" : "Adobe XD",
       "image" : "/icons/xd.png",
-      "skill" : 90
+      "skill" : 90,
+      "color" : "#ff076c"
     },
     {
       "id" : 12,
       "name" : "Photoshop",
       "image" : "/icons/photoshop.png",
-      "skill" : 92
+      "skill" : 92,
+      "color" : "#072fff"
     }
   ];
 
@@ -117,6 +129,8 @@ export const Skill = () => {
       }
     }, 1);
   };
+
+  const [selected, setSelected] = useState(native[0].color);
     
   return (
     <Fragment>
@@ -127,14 +141,20 @@ export const Skill = () => {
         </div>
         <div className={styles.baris} style={{ paddingTop: '30px' }}>
           <div className={styles.skillChoice}>
-            {console.log('info', info)}
-            <div className={styles.collectionBox}>
-              {skill.map((n, i) =>
-                <div onClick={e => {setInfo(n); setRerun(true)}} className={`${styles.logoWrapper} ${styles.visibleLogoWrapper}`} id="logoWrapper" key={i} >
-                  <img src={n.image} className={styles.langIcon} alt={`${n.name} icon`}/>
-                </div>
-              )}
-            </div>
+            <AnimateSharedLayout>
+              <div className={styles.collectionBox}>
+                {skill.map((n, i) =>
+                  <Item
+                    key={i}
+                    color={n.color}
+                    image={n.image}
+                    name={n.name}
+                    isSelected={selected === n.color}
+                    onClick={() => {setSelected(n.color); setInfo(n); setRerun(true)}}
+                  />
+                )}
+              </div>
+            </AnimateSharedLayout>
             <div className={styles.choice}>
               <div className={styles.choiceIcon}>
                 <motion.img whileHover={scaleAnimate} onClick={e => {setSkill(native); refresh()}} className={styles.choiceIco} src="/icons/native.png" alt="native logo"/>
@@ -154,6 +174,23 @@ export const Skill = () => {
         </div>
       </div>
     </Fragment>
+  );
+}
+
+function Item({ color, image, name, key, isSelected, onClick }) {
+  return (
+    <div layoutId={styles.outline} onClick={onClick} className={`${styles.logoWrapper} ${styles.visibleLogoWrapper} `} id="logoWrapper" key={key} >
+      {isSelected && (
+        <motion.div
+          layoutId={styles.outline}
+          className={styles.outline}
+          initial={false}
+          animate={{ borderColor: color }}
+          transition={ spring }
+        />
+      )}
+      <img src={image} className={styles.langIcon} alt={`${name} icon`}/>
+    </div>
   );
 }
 
@@ -241,10 +278,17 @@ const CircleBar = ({ size, progress, strokeWidth, circleOneStroke, circleTwoStro
   );
 }
 
-CircleBar.PropTypes = {
+CircleBar.propTypes = {
   size: PropTypes.number.isRequired,
   progress: PropTypes.number.isRequired,
   strokeWidth: PropTypes.number.isRequired,
   circleOneStroke: PropTypes.string.isRequired,
   circleTwoStroke: PropTypes.string.isRequired
 }
+
+
+const spring = {
+  type: "spring",
+  stiffness: 500,
+  damping: 30
+};

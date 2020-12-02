@@ -11,6 +11,11 @@ body {
   margin: 0;
 }
 
+::selection {
+  color: var(--base-font);
+  background: transparent;
+}
+
 a {
   color: inherit;
   text-decoration: none;

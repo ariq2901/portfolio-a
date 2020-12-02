@@ -15,7 +15,7 @@ export const ProgressScroll = ({ constraintRe }) => {
 
   return (
     <Fragment>
-      <motion.div drag dragConstraints={constraintRe} whileHover={hovInteract} className="containerBar">
+      <motion.div drag dragConstraints={constraintRe} whileTap={{ cursor: 'grabbing' }} whileHover={hovInteract} className="containerBar">
         <motion.div
           className="statusBar"
           style={{scaleY: scrollYProgress}}
