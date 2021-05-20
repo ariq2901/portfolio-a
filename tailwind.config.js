@@ -1,15 +1,5 @@
 module.exports = {
   purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./modules/**/*.{js,ts,jsx,tsx}"],
-  purge: {
-    content: [
-      "./src/pages/**/*.{js,ts,jsx,tsx}",
-      "./src/components/**/*.{js,ts,jsx,tsx}",
-    ],
-    options: {
-      // Generate col-span-1 -> 12
-      safelist: ["alert-error"],
-    },
-  },
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
