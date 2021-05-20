@@ -21,6 +21,9 @@
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
-    "file-loader": "^6.2.0"
+    "autoprefixer": "^10.2.5",
+    "file-loader": "^6.2.0",
+    "postcss": "^8.2.15",
+    "tailwindcss": "^2.1.2"
   }
 }

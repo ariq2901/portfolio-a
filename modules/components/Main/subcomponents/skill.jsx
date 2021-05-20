@@ -14,7 +14,7 @@ export const Skill = () => {
     if(skill.length < 1) {
       setSkill(native);
     }
-  }, skill);
+  }, [skill]);
 
   const native = [
     {
@@ -120,7 +120,6 @@ export const Skill = () => {
   {
     setTimeout(() => {
       var logo = document.getElementsByClassName(styles.logoWrapper);
-      console.log('logo', logo);
       for(let i=0; i < logo.length; i++) {
         logo[i].classList.remove(styles.visibleLogoWrapper);
         setTimeout(() => {
@@ -134,10 +133,10 @@ export const Skill = () => {
     
   return (
     <Fragment>
-      <div className={`${styles.container} ${styles.gradientBg}`}>
+      <div className={`${styles.container} ${styles.gradientBG}`}>
         <div className={styles.doTitle}>
-          <span className={styles.doText} style={{ color: '#ffffff' }}>My Skills</span>
-          <progress className={`${styles.lineProg} lineDua`} max="100" value="30"></progress>
+          <span className={styles.doText}>My Skills</span>
+          <progress className={styles.lineProg} max="100" value="30"></progress>
         </div>
         <div className={styles.baris} style={{ paddingTop: '30px' }}>
           <div className={styles.skillChoice}>
@@ -145,7 +144,7 @@ export const Skill = () => {
               <div className={styles.collectionBox}>
                 {skill.map((n, i) =>
                   <Item
-                    key={i}
+                    keys={i}
                     color={n.color}
                     image={n.image}
                     name={n.name}
@@ -177,11 +176,12 @@ export const Skill = () => {
   );
 }
 
-function Item({ color, image, name, key, isSelected, onClick }) {
+function Item({ color, image, name, keys, isSelected, onClick }) {
   return (
-    <div layoutId={styles.outline} onClick={onClick} className={`${styles.logoWrapper} ${styles.visibleLogoWrapper} `} id="logoWrapper" key={key} >
+    <div layoutId={styles.outline} onClick={onClick} className={`${styles.logoWrapper} ${styles.visibleLogoWrapper} `} id="logoWrapper" key={keys} >
       {isSelected && (
         <motion.div
+          key={keys}
           layoutId={styles.outline}
           className={styles.outline}
           initial={false}
@@ -212,7 +212,6 @@ const InfoSkill = ({ data, rerun }) => {
   }, [data]);
 
   useEffect(() =>{
-    console.log('rerun', rerun)
     if(rerun) {
       refreshDua();
     }
@@ -221,7 +220,6 @@ const InfoSkill = ({ data, rerun }) => {
   function refreshDua()
   {
       var arrow = document.getElementById("arroq");
-      console.log('arrow', arrow);
       arrow.classList.remove(styles.arrowImgActive);
       setTimeout(() => {
         arrow.classList.add(styles.arrowImgActive);
@@ -280,7 +278,7 @@ const CircleBar = ({ size, progress, strokeWidth, circleOneStroke, circleTwoStro
 
 CircleBar.propTypes = {
   size: PropTypes.number.isRequired,
-  progress: PropTypes.number.isRequired,
+  progress: PropTypes.number,
   strokeWidth: PropTypes.number.isRequired,
   circleOneStroke: PropTypes.string.isRequired,
   circleTwoStroke: PropTypes.string.isRequired

@@ -10,6 +10,8 @@ import { wrap } from "@popmotion/popcorn";
 import { Do } from '@components/Main/subcomponents/do';
 import { Skill } from './subcomponents/skill';
 import { Project } from './subcomponents/project';
+import { MoreInfo } from './subcomponents/moreInfo';
+import { Footer } from '@components/Footer';
 
 const Main = () => {
   const [ulang, setUlang] = useState(false);
@@ -110,9 +112,11 @@ const Main = () => {
                 </AnimatePresence>
               </div>
               <div className={styles.profileName}><span>Ariq Jusuf</span></div>
-              <div className={styles.profileInfo}><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia ut quia ratione obcaecati magni at labore cum praesentium libero ducimus voluptas dignissimos asperiores voluptatum, fugiat esse totam! Maiores, qui enim!</span></div>
+              <div className={styles.profileInfo}>
+                <span>I relish taking complex problems and turning them into something people can use later without having the same problems as me. I prefer to create logic structures that can be executed dynamically.<br /> If I'm not coding or pushing the repo. You'll find me pushing rank in several games!</span>
+              </div>
               <motion.div className={styles.goButton}>
-                <motion.button drag dragConstraints={{ left: 0, right: 50, top: 0, bottom: 30 }} className={styles.downloadCv}>Download CV</motion.button>
+                <motion.button drag dragConstraints={{ left: 0, right: 50, top: 0, bottom: 30 }} className={styles.downloadCv}><a href="/cv/CV%20-%20Ariq%20Jusuf.pdf" className="no-underline" download>Download CV</a></motion.button>
                 <button className={styles.goContact}>
                   <Link href="/contact">
                     Contact
@@ -125,6 +129,8 @@ const Main = () => {
         <Do/>
         <Skill />
         <Project />
+        <MoreInfo />
+        <Footer />
         <ProgressScroll constraintRe={constraintRef}/>
       </motion.div>
     </Fragment>

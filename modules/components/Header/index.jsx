@@ -52,7 +52,7 @@ const Header = () => {
     <Fragment>
       <nav>
         <div className={styles.container}>
-          <div className={styles.navLine}>
+          <div className={`${styles.navLine} items-center`}>
             <motion.div className={styles.navProfile} initial="hidden" animate="visible" variants={profileLogo}>
               <Image src="/profile-img/ariq.png" width="50" height="50"/>
               <div className={styles.nameLogo}>
@@ -63,7 +63,7 @@ const Header = () => {
             <motion.ul className={styles.navLink} initial="hidden" animate="visible" variants={navbar}>
               <motion.li className={router.pathname == "/" ? `${styles.active} ${styles.a} ${styles.linkDrop}` : `${styles.a} ${styles.linkDrop}`}>
                 <Link href="/">About Me</Link>
-                <i className={`fas fa-chevron-down ${styles.linkDrop__icon}`}></i>
+                {/* <i className={`fas fa-chevron-down ${styles.linkDrop__icon}`}></i> */}
               </motion.li>
               <motion.li className={router.pathname == "/resume" ? `${styles.active} ${styles.a} ${styles.linkDrop}` : `${styles.a} ${styles.linkDrop}`}>
                 <Link href="/resume">Resume</Link>
