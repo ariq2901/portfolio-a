@@ -1,9 +1,14 @@
+import Head from 'next/head';
 import Header from '@components/Header';
-import Main from '@components/Main';
+import Main from '@components/Home/Main';
 
 const Home = () => {
   return(
     <div>
+      <Head>
+        <title>Ariq Jusuf Habibie</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <Header />
       <Main />
     </div>

@@ -33,13 +33,13 @@ export const MoreInfo = () => {
 
   return (
     <Fragment>
-      <div className={`${styles.container} ${styles.parallax}`} style={{ marginTop: '18vh' }}>
-        <div className={styles.moreInfoTitleWrapper}>
-          <h1 className={styles.moreInfoTitle}>Know More</h1>
-          <span className={styles.moreInfoSweetier}>Far far away, behind the word mountains, far from the countries San Marino and <br/>Malta</span>
+      <div className={`relative w-full mx-auto px-10 pt-5 sm:pt-40 pb-8 sm:pb-36 mt-5 ${styles.parallax}`}>
+        <div className="w-full text-center">
+          <h1 className="font-nunito text-3xl text-base-font">Know More</h1>
+          <span className="font-poppins text-long-font">Far far away, behind the word mountains, far from the countries San Marino and <br />Malta</span>
         </div>
-        <div className={styles.cardInfoWrapper}>
-          <motion.div className={`${styles.cardInfo} cardInfoJS`} whileHover={cardAnimate}>
+        <div className="mt-14 sm:mt-16 w-full sm:h-72 grid grid-cols-1 sm:grid-cols-4 gap-2.5-percent">
+          <motion.div className="relative w-full h-72 sm:h-full flex flex-col shadow-md p-6 backdrop-blur" whileHover={cardAnimate}>
             <div className={styles.iconRounded}>
               <i className={`${styles.iconInfo} fas fa-sign`}></i>
             </div>
@@ -48,7 +48,7 @@ export const MoreInfo = () => {
               <span>Telaga Jambu Housing B1/05, Depok, West Java 16511</span>
             </div>
           </motion.div>
-          <motion.div className={`${styles.cardInfo} cardInfoJS`} whileHover={cardAnimate}>
+          <motion.div className="relative w-full h-72 sm:h-full flex flex-col shadow-md p-6 backdrop-blur" whileHover={cardAnimate}>
             <div className={styles.iconRounded}>
               <i className={`${styles.iconInfo} fas fa-phone-alt`}></i>
             </div>
@@ -57,7 +57,7 @@ export const MoreInfo = () => {
               <span><a href="tel:+6287784625949" style={{ color: 'var(--primary-color)' }}>+62 877 8462 5949</a></span>
             </div>
           </motion.div>
-          <motion.div className={`${styles.cardInfo} cardInfoJS`} whileHover={cardAnimate}>
+          <motion.div className="relative w-full h-72 sm:h-full flex flex-col shadow-md p-6 backdrop-blur" whileHover={cardAnimate}>
             <div className={styles.iconRounded}>
               <i className={`${styles.iconInfo} fas fa-paper-plane`}></i>
             </div>
@@ -66,7 +66,7 @@ export const MoreInfo = () => {
               <span><a href="mailto:ariq2901@gmail.com" style={{ color: 'var(--primary-color)' }}>ariq2901@gmail.com</a></span>
             </div>
           </motion.div>
-          <motion.div className={`${styles.cardInfo} cardInfoJS`} whileHover={cardAnimate}>
+          <motion.div className="relative w-full h-72 sm:h-full flex flex-col shadow-md p-6 backdrop-blur" whileHover={cardAnimate}>
             <div className={styles.iconRounded}>
               <i className={`${styles.iconInfo} fas fa-laptop-house`}></i>
             </div>

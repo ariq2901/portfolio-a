@@ -127,7 +127,6 @@
   width: 40%;
   justify-content: space-around;
   list-style: none;
-  display: flex;
   font-family: "Poppins Regular";
   font-size: 14px;
 }
@@ -164,11 +163,6 @@
 }
 
 .outerRound {
-  justify-self: end;
-  position: relative;
-  width: 350px;
-  height: 350px;
-  border-radius: 50%;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
 }
 
@@ -204,36 +198,12 @@
   overflow: hidden;
 }
 
-.profileTitle {
-  position: absolute;
-  font-family: "Poppins Regular";
-  color: var(--long-font);
-  opacity: 0;
-  outline: none;
-  border: none;
-  background: transparent;
-  font-size: 16px;
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none !important;
-}
-
-.profileTitle:hover {
-  cursor: grab;
-}
-
-.profileTitle:active {
-  cursor: grabbing;
-}
-
 .outline {
   position: absolute;
   top: 1px;
   left: -11px;
   right: 1px;
-  bottom: -7px;
+  bottom: -11px;
   /* border: 10px solid #fff; */
   border-left: 6px solid #fff;
   border-bottom: 6px solid #fff;
@@ -247,13 +217,6 @@
   transition: all 0.7s ease;
 }
 
-.profileName {
-  margin-top: -10px;
-  font-family: "Poppins Semibold";
-  font-size: 300%;
-  color: var(--base-font);
-}
-
 .profileInfo {
   padding-right: 30%;
   font-family: "Poppins Regular";
@@ -261,12 +224,6 @@
   line-height: 25px;
   margin-bottom: 10px;
   color: var(--long-font);
-}
-
-.goButton {
-  margin-bottom: -20px;
-  display: flex;
-  width: 100%;
 }
 
 .downloadCv {
@@ -305,6 +262,7 @@
 
 /*? What I Do  */
 
+/*! "w-full inline-flex flex-col pt-5" */
 .doTitle {
   width: 100%;
   display: inline-flex;
@@ -312,59 +270,18 @@
   padding-top: 20px;
 }
 
+/*! "font-poppins font-semibold text-lg sm:text-xl text-base-font" */
 .doText {
   font-family: "Poppins Semibold";
   font-size: 21px;
   color: var(--base-font);
 }
 
-.skills {
-  margin-top: 40px;
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
-}
-
-.skill {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 0.1fr 1fr;
-}
-
-.iconSkill {
-  width: 38px;
-}
-
-.iconSvg {
-  width: 100%;
-}
-
-.infoSkill {
-  width: 100%;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-}
-
-.titleSkill {
-  font-family: "Poppins Semibold";
-  font-size: 16px;
-  color: var(--base-font);
-}
-
-.detailSkill {
-  margin-top: 8px;
-  font-family: "Poppins Regular";
-  font-size: 12.88px;
-  color: var(--long-font);
-}
-
 /*^ Timeline */
 .timeline {
   font-family: "Poppins Regular", sans-serif;
   position: relative;
-  margin: 50px auto;
+  margin: 0 auto 50px;
   padding: 40px 0;
   width: 80%;
   box-sizing: border-box;
@@ -450,10 +367,14 @@
   font-size: 14px;
 }
 
+.timelineTime {
+  width: 128px;
+}
+
 .timelineLi:nth-child(odd) .timelineTime {
   position: absolute;
   top: 12px;
-  right: -130px;
+  right: -145px;
   margin: 0;
   padding: 8px 16px;
   background: #00c26b;
@@ -479,10 +400,10 @@
   right: -145px;
 }
 
-.timelineLi:nth-child(4) .timelineTime {
+/* .timelineLi:nth-child(4) .timelineTime {
   position: absolute;
   left: -123px;
-}
+} */
 
 .timelineChoose {
   position: fixed;
@@ -513,108 +434,6 @@
 .gradientBG {
   background: linear-gradient(240deg, #0cebeb, #20e3b2, #29ffc6);
   height: 100vh;
-}
-
-.liveGradientBG {
-  margin-top: 12vh;
-  height: 100vh;
-  background: linear-gradient(240deg, #b244fd, #008cff, #00ffc9, #06f787);
-  background-size: 600% 600%;
-
-  -webkit-animation: liveGradient 44s ease infinite;
-  -moz-animation: liveGradient 44s ease infinite;
-  animation: liveGradient 44s ease infinite;
-}
-
-@-webkit-keyframes liveGradient {
-  0% {
-    background-position: 0% 73%;
-  }
-  50% {
-    background-position: 100% 28%;
-  }
-  100% {
-    background-position: 0% 73%;
-  }
-}
-@-moz-keyframes liveGradient {
-  0% {
-    background-position: 0% 73%;
-  }
-  50% {
-    background-position: 100% 28%;
-  }
-  100% {
-    background-position: 0% 73%;
-  }
-}
-@keyframes liveGradient {
-  0% {
-    background-position: 0% 73%;
-  }
-  50% {
-    background-position: 100% 28%;
-  }
-  100% {
-    background-position: 0% 73%;
-  }
-}
-
-.baris {
-  display: grid;
-  width: 100%;
-  grid-template-columns: 1fr 1.1fr;
-  margin-top: 30px;
-}
-
-.skillChoice {
-  width: 100%;
-  position: relative;
-  height: 100%;
-}
-
-.collectionBox {
-  padding: 10px 15px;
-  margin-left: 16px;
-  width: 75%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  height: 230px;
-  box-sizing: border-box;
-  place-items: center;
-  border-radius: 30px;
-  overflow: hidden;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
-}
-
-.choice {
-  position: absolute;
-  width: 75%;
-  height: 69px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  place-items: center;
-  margin-top: 15px;
-  margin-left: 17px;
-  border-radius: 15px;
-  background: rgba(255, 255, 255, 0.234);
-  box-shadow: 0 7px 31px rgba(0, 0, 0, 0.06);
-}
-
-.choiceIcon {
-  position: relative;
-  width: 20%;
-}
-
-.choiceIco {
-  cursor: pointer;
-  width: 100%;
-  filter: invert(22%) sepia(6%) saturate(185%) hue-rotate(97deg) brightness(91%)
-    contrast(96%);
-}
-
-.choiceIcon:nth-child(2) {
-  width: 25%;
 }
 
 .tooltip {
@@ -695,33 +514,6 @@
   width: 100%;
 }
 
-.infoWrapper {
-  border-radius: 15px;
-  background: rgba(255, 255, 255, 0.234);
-  box-shadow: 0 7px 31px rgba(0, 0, 0, 0.06);
-  width: 100%;
-  height: 125%;
-  display: grid;
-  place-items: center;
-  grid-template-columns: 1fr 1.1fr;
-  padding: 0 40px;
-  box-sizing: border-box;
-}
-
-.infoDetail {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.arrow {
-  width: 35%;
-  height: auto;
-  overflow: hidden;
-}
-
 .arrowImg {
   width: 100%;
   height: 100%;
@@ -760,64 +552,7 @@
   }
 }
 
-.detail {
-  width: 50%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.infoImage {
-  width: 54%;
-  overflow: hidden;
-}
-
-.infoImg {
-  width: 100%;
-}
-
-.infoName {
-  font-family: "Poppins Regular";
-  color: var(--base-font);
-  font-size: 25px;
-  text-align: center;
-}
-
 /* ^ Circular Progressbar */
-.svg {
-  display: block;
-  max-width: 100%;
-  position: relative;
-}
-
-.svgCircleBg {
-  fill: none;
-}
-
-.svgCircle {
-  fill: none;
-}
-
-.svgCircleText {
-  font-size: 2rem;
-  text-anchor: middle;
-  fill: #fff;
-  font-weight: bold;
-  font-family: "Poppins Regular";
-}
-
-.svgWrapper {
-  width: 270px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  height: 270px;
-  background: var(--secondary-color);
-}
-
 /* ^ Gallery Latest Project */
 
 .projectWrapper {
@@ -925,43 +660,6 @@
 }
 
 /*^ More Info */
-
-.moreInfoTitleWrapper {
-  width: 100%;
-  text-align: center;
-}
-
-.moreInfoTitle {
-  font-family: "Nunito Bold";
-  font-size: 40px;
-  color: var(--base-font);
-}
-
-.moreInfoSweetier {
-  font-family: "Poppins Regular";
-  color: var(--long-font);
-}
-
-.cardInfoWrapper {
-  margin-top: 12vh;
-  padding: 0 5%;
-  width: 100%;
-  height: 285px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 2.5%;
-}
-
-.cardInfo {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-  padding: 24px;
-  backdrop-filter: blur(10px);
-}
 
 .iconRounded {
   width: 100px;
