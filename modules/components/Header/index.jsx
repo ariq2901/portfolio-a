@@ -71,11 +71,11 @@ const Header = () => {
               <motion.li className={router.pathname == "/resume" ? `${styles.active} ${styles.a} ${styles.linkDrop} py-1 sm:py-0` : `${styles.a} ${styles.linkDrop} py-1 sm:py-0`}>
                 <Link href="/resume">Resume</Link>
               </motion.li>
-              <motion.li className={router.pathname == "/resume" ? `${styles.active} ${styles.a} ${styles.linkDrop} py-1 sm:py-0` : `${styles.a} ${styles.linkDrop} py-1 sm:py-0`}>Potfolio</motion.li>
-              <motion.li className={router.pathname == "/resume" ? `${styles.active} ${styles.a} ${styles.linkDrop} py-1 sm:py-0` : `${styles.a} ${styles.linkDrop} py-1 sm:py-0`}>
+              <motion.li className={router.pathname == "/portfolio" ? `${styles.active} ${styles.a} ${styles.linkDrop} py-1 sm:py-0` : `${styles.a} ${styles.linkDrop} py-1 sm:py-0`}>Portfolio</motion.li>
+              <motion.li className={router.pathname == "/blog" ? `${styles.active} ${styles.a} ${styles.linkDrop} py-1 sm:py-0` : `${styles.a} ${styles.linkDrop} py-1 sm:py-0`}>
                 <a href="https://ariq2901.medium.com/" target="_blank">Blog</a>
               </motion.li>
-              <motion.li className={router.pathname == "/resume" ? `${styles.active} ${styles.a} ${styles.linkDrop} py-1 sm:py-0` : `${styles.a} ${styles.linkDrop} py-1 sm:py-0`}>Contact</motion.li>
+              <motion.li className={router.pathname == "/contact" ? `${styles.active} ${styles.a} ${styles.linkDrop} py-1 sm:py-0` : `${styles.a} ${styles.linkDrop} py-1 sm:py-0`}>Contact</motion.li>
             </motion.ul>
           </div>
         </div>
