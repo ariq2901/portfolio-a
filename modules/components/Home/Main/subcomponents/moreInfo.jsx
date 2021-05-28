@@ -36,7 +36,7 @@ export const MoreInfo = () => {
       <div className={`relative w-full mx-auto px-10 pt-5 sm:pt-40 pb-8 sm:pb-36 mt-5 ${styles.parallax}`}>
         <div className="w-full text-center">
           <h1 className="font-nunito text-3xl text-base-font">Know More</h1>
-          <span className="font-poppins text-long-font">I would love if you could contact me to make something amazing together</span>
+          <span className="font-poppins text-long-font">I would love if you could contact me to make something amazing <br /> together</span>
         </div>
         <div className="mt-14 sm:mt-16 w-full sm:h-72 grid grid-cols-1 sm:grid-cols-4 gap-2.5-percent">
           <motion.div className="relative w-full h-72 sm:h-full flex flex-col shadow-md p-6 backdrop-blur" whileHover={cardAnimate}>
@@ -54,7 +54,7 @@ export const MoreInfo = () => {
             </div>
             <h6 className={styles.cardTitle}>Contact Number</h6>
             <div className={styles.cardDetail}>
-              <span><a href="tel:+6287784625949" style={{ color: 'var(--primary-color)' }}>+62 877 8462 5949</a></span>
+              <span><a href="tel:+6281807383460" style={{ color: 'var(--primary-color)' }}>+62 818-0738-3460</a></span>
             </div>
           </motion.div>
           <motion.div className="relative w-full h-72 sm:h-full flex flex-col shadow-md p-6 backdrop-blur" whileHover={cardAnimate}>
